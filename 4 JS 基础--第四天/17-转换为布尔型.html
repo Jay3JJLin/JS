@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转换为布尔型</title>
+</head>
+
+<body>
+    <script>
+        // 对字符串
+        console.log(Boolean('pink'));//转换为布尔型 true
+        console.log(Boolean(''));//false 
+        console.log(Boolean(0));//数字只有0 为假 
+        console.log(Boolean(undefined));//false
+        console.log(Boolean(null));//false
+        console.log(Boolean(NaN));//false
+        console.log('哟西' + undefined);//哟西undefined,只有字符串拼接时undefined运算结果不为NaN
+
+        console.log('-------------------');
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+显示转换：
+1.Boolean(内容)
+记忆： ‘’
+、0、undefined、null、false、NaN 转换为布尔值后都是false, 其余则为 true
+ 
+隐式转换：
+1.有字符串的加法“”+1，结果是“1”
+2.减法-（像大多数数学运算一样）只能用于数字，它会使空字符串""转换为0 3.null经过数字转换之后会变为0
+4.undefined经过数字转换之后会变为NaN  undefined除了字符串拼接，运算结果均为NaN
+5. undefined==null 等价于0 但undefined !== null 字符串类型不同
+-->

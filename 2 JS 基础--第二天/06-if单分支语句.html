@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if单分支语句</title>
+</head>
+
+<body>
+    <script>
+        //单分支语句
+        if (false) {
+            console.log('执行语句');
+        }
+        if (2 === '2') {
+            console.log('执行语句');
+        }
+
+        //除了0,所有数字都为真
+        if (2) {
+            console.log('哟西');
+        }
+        console.log('------------------');
+
+        //除了空字符串，其他字符串均为真
+        if ('一作死到底，双击，拼了，艹') {
+            console.log('呱');
+        }
+        if ('') {
+            console.log('执行预计');
+        }
+        //if('') console.log('come baby go');
+        console.log('---------------------------');
+
+        //用户输入高考成绩，如果分数大于700，则提示恭喜考入黑马程序员
+        //1.用户输入
+        let score = +prompt('请输入成绩：');
+        //2.进行判断输出
+        if (score >= 700) {
+            alert('恭喜考入黑马程序员');
+        }
+        console.log('-----------');
+    </script>
+</body>
+
+</html>
+
+<!-- 
+表达式和语句的区别
+Ø 因为表达式可被求值，所以它可以写在赋值语句的右侧。
+Ø 而语句不一定有值，所以比如 alert() for和break 等语句就
+不能被用于赋值
+ -->
+
+<!-- if语句
+l if语句有三种使用：单分支、双分支、多分支
+l 单分支使用语法：
+Ø 括号内的条件为true时，进入大括号里执行代码
+Ø 小括号内的结果若不是布尔类型时，会发生隐式转换转为布尔类型
+Ø 如果大括号只有一个语句，大括号可以省略，但是，俺们不提倡这么做~
+ -->

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体验js</title>
+    <style>
+        .pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="pink">按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+
+    <!-- js写在/body的上边 -->
+    <script>
+        // 获取四个按钮
+        let bts = document.querySelectorAll('button')
+        for (let i = 0; i < bts.length; i++) {
+            // 点击事件
+            bts[i].addEventListener('click', function () {
+                // 将原先的按钮取消
+                document.querySelector('.pink').className = ''
+                // 点谁 谁变里亮
+                this.className = 'pink'
+            })
+        }
+    </script>
+</body>
+
+</html>

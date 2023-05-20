@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js书写位置--内部</title>
+</head>
+
+<body>
+    <!-- 内部js -->
+    <script>
+        // 页面弹出警示框
+        alert('你好，js~')
+    </script>
+</body>
+
+</html>
+
+
+<!-- 1. 内部 JavaScript
+直接写在html文件里，用script标签包住
+规范：script标签写在</body>上面
+拓展： alert(‘你好，js’) 页面弹出警告对话框 -->
+
+<!--注意事项 
+我们将 <script> 放在HTML文件的底部附近的原因是浏览器会按照代码在文件中的顺序加载 HTML。
+如果先加载的 JavaScript 期望修改其下方的 HTML，那么它可能由于 HTML 尚未被加载而失效。
+因此，将 JavaScript 代码放在 HTML页面的底部附近通常是最好的策略。 -->

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检测数据类型</title>
+</head>
+<body>
+    <script>
+        let num = 10;
+        console.log(typeof num);//数字型
+        let str = 'pink';
+        console.log(typeof str);//字符串型
+        let str1 = '10';
+        console.log(typeof str1);//字符串型
+        let flag = false;
+        console.log(typeof flag)//布尔型
+        let un
+        console.log(typeof un);//undefined 型
+        let obj = null;
+        console.log(typeof obj);//object 对象
+
+    </script>
+</body>
+</html>
+
+<!-- 
+通过 typeof 关键字检测数据类型
+typeof 运算符可以返回被检测的数据类型。它支持两种语法形式：
+1. 作为运算符： typeof x （常用的写法）
+2. 函数形式： typeof(x)
+换言之，有括号和没有括号，得到的结果是一样的，所以我们直接使用运算符的写法。
+ -->

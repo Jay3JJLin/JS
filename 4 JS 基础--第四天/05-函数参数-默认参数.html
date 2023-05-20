@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>默认参数</title>
+</head>
+
+<body>
+    <script>
+        //函数求和
+        function getSum(num1 = 0, num2 = 0) {
+            // num1 默认值 是 undefined
+            document.write(num1 + num2);
+            document.write('<br>');
+        }
+        getSum(1, 2);//优先执行传入实参 3
+        getSum();//结果是0 而不是N
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    函数传参-参数默认值
+形参： 可以看做变量，但是如果一个变量不给值，默认是什么？
+Ø undefined
+但是如果做用户不输入实参，刚才的案例，则出现 undefined + undefined 结果是什么？
+Ø NaN
+我们可以改进下，用户不输入实参，可以给 形参默认值，可以默认为 0, 这样程序更严谨，
+
+说明：这个默认值只会在缺少实参参数传递时 才会被执行，所以有参数会优先执行传递过来的实参, 否则默认为
+undefined
+ -->

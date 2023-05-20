@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户输入案例</title>
+</head>
+
+<body>
+    <!-- 
+    需求：用户输入一个，判断这个数能被4整除，但是不能被100整除,满足条件，页面弹出true，否则弹出
+false
+     -->
+    <script>
+        //1.用户输入
+        let num = prompt('请输入一个数字：');
+        //2.弹出结果
+        alert(num % 4 === 0 && num % 10 !== 0);
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    一元运算符里面的逻辑非优先级很高
+    逻辑与比逻辑或优先级高
+ -->

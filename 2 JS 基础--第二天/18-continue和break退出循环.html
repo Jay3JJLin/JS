@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue和break退出循环</title>
+</head>
+
+<body>
+    <script>
+        // 打印5句话
+        // let i = 1;
+        // while (i <= 5) {
+        //     if (i === 3) {
+        //         break;//退出整个循环
+        //     }
+        //     console.log(`哟西${i}<br>`);
+        //     i++;
+        // }
+
+        let i = 1;
+        while (i <= 5) {
+            if (i === 3) {
+                i++;
+                continue;//结束本次循环，继续下次循环,下面的代码不执行
+            }
+            console.log(`哟西${i}<br>`);
+            i++;
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 
+目标： 能说出continue和break的区别
+循环结束：
+Ø break：退出循环
+Ø continue：结束本次循环，继续下次循环
+区别：
+Ø continue 退出本次循环，一般用于排除或者跳过某一个选项的时候, 可以使用continue
+Ø break 退出整个循环，一般用于结果已经得到, 后续的循环不需要的时候可以使用
+ -->

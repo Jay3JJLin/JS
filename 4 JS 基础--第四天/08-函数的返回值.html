@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的返回值</title>
+</head>
+
+<body>
+    <script>
+        // 函数的返回值
+        function fn() {
+            return 20;
+        }
+        //相当于执行了 fn() 调用者 fn() = 20
+        // console.log(fn());
+        let res = fn();
+        console.log(res);
+
+        //求和函数的写法
+        function getTotalPrice(x, y) {
+            return x + y;//return 后面的代码不再执行 一般写在最后 不要换行
+        }
+        let sum = getTotalPrice(1, 2);
+        console.log(sum);
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    所以要根据需求，来设定需不需要返回值
+
+有返回值的函数
+l 细节：
+Ø 在函数体中使用 return 关键字能将内部的执行结果交给函数外部使用
+Ø return 后面代码不会再被执行，会立即结束当前函数，所以 return 后面的数据不要换行写
+Ø return函数可以没有 return，这种情况函数默认返回值为 undefined
+ -->

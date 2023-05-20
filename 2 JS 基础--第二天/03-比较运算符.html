@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比较运算符</title>
+</head>
+<body>
+    <script>
+        console.log(3>5);//false
+        console.log(3>=3);
+        console.log(2 == 2);
+
+        //比较运算符有隐式转换 把'2' 转换为 2 双等号 只判断值
+        console.log(2 == '2');//true
+        console.log(undefined === null);//双等为true 三等为false
+
+        // === 全等 判断 值 和 数据类型 都一样才行
+        // 以后判断是否相等 请用 ===
+        console.log(2 === '2');//false
+
+        console.log(NaN === NaN);//NaN 不等于任何人，包括自己
+        console.log(2 !== '2');//true 数据类型不等
+
+        console.log('--------------------------');
+        console.log('a' < 'b');//true
+        console.log('aa' < 'ab');//true
+        console.log('aa' < 'aac');//true
+    </script>
+</body>
+</html>
+
+<!-- 
+对比：
+Ø = 单等是赋值
+Ø == 是判断
+Ø === 是全等
+Ø 开发中判断是否相等，强烈推荐使用 ===
+
+
+字符串比较，是比较的字符对应的ASCII码
+Ø 从左往右依次比较
+Ø 如果第一位一样再比较第二位，以此类推
+Ø 比较的少，了解即可
+l NaN不等于任何值，包括它本身
+Ø 涉及到"NaN“ 都是false
+l 尽量不要比较小数，因为小数有精度问题
+l 不同类型之间比较会发生隐式转换
+Ø 最终把数据隐式转换转成number类型再比较
+Ø 所以开发中，如果进行准确的比较我们更喜欢 === 或者 !==
+
+1. = 和 == 和 === 怎么区别？
+Ø = 是赋值
+Ø == 是判断 只要求值相等，不要求数据类型一样即可返回true
+Ø === 是全等 要求值和数据类型都一样返回的才是true
+Ø 开发中，请使用 ===
+2. 比较运算符返回的结果是什么？
+Ø 结果只有2个， true 或者 false
+ -->

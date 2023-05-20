@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字补零案例</title>
+</head>
+
+<body>
+    <script>
+        // let age = 18;
+        // age = age + 1;
+        // age++;
+
+
+        //1.用户输入
+        let num = prompt('请您输入一个数字：');//此时num为字符串型
+        //2.判断输出--小于10 才补0
+        num = num < 10 ? 0 + num : num;//0是数字型，num是字符串型，所以组合前面有0
+        // = 号优先级最低 所以先算右边 算完赋值给左边
+
+        // num = num >= 10 ? num : 0 + num;
+        alert(num);
+    </script>
+</body>
+
+</html>
+
+<!-- 
+需求：用户输入1个数，如果数字小于10，则前面进行补0， 比如 09 03 等
+分析：
+①：为后期页面显示时间做铺垫
+②：利用三元运算符 补 0 计算
+ -->
