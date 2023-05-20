@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成随机颜色</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        //1.自定义一个随机颜色函数
+        function getRandomColor(flag = true) {//默认为true
+            if (flag) {
+                // 3.如果是true 则返回 #ffffff 十六进制颜色
+                let str = `#`;
+                let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+                // 用for 循环 随机抽6次 累加到 str 里面
+                // 每次要从随机数组中抽一个
+                // randomNum 是数组的索引号 是随机的
+                // 因为数组下标从0开始的 所以用数组的长度即可包含所有数字下标 不用+1
+                for (let i = 0; i < 6; i++) {
+                    let randomNum = Math.floor(Math.random() * arr.length);
+                    // 字符串拼接
+                    str += arr[randomNum];
+                }
+                return str;
+            } else {
+                // 4.否则是 false 则返回 rgb(255,255,255)
+                //三个随机颜色 执行顺序不同，生成的值也不同 
+                let r = Math.floor(Math.random() * 256);
+                let g = Math.floor(Math.random() * 256);
+                let b = Math.floor(Math.random() * 256);
+
+                return `rgb(${r},${g},${b})`;
+            }
+        }
+        // 2.调用函数 getRandomColor(布尔值)
+        console.log(getRandomColor(false));
+        console.log(getRandomColor(true));
+        console.log(getRandomColor());
+
+        const div = document.querySelector('div');
+        div.style.backgroundColor = getRandomColor();
+    </script>
+</body>
+
+</html>
+
+<!-- 
+需求：该函数接收一个布尔类型参数，表示颜色的格式是十六进制还是rgb格式。
+①：如果参数传递的是true或者无参数，则输出 一个随机十六进制的颜色
+②：如果参数传递的是false，则输出 一个随机rgb的颜色
+
+分析：
+提示： 16进制颜色格式为: ‘#ffffff’ 其中f可以是任意 0-f之间的字符
+提示: rgb颜色格式为: ‘rgb(255,255,255) ’ 其中255可以是任意0-255之间的数字
+ -->

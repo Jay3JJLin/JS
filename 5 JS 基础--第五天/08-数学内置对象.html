@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数学内置对象</title>
+</head>
+
+<body>
+    <script>
+        //属性
+        console.log(Math.PI);
+        //方法
+        console.log(Math.ceil(1.1));//2 ceil向上取整 天花板
+        console.log(Math.floor(1.1));//1 floor 向下取整 地板
+        console.log("--------------------------");
+        // 四舍五入 round 只能放数值，不能放字符串
+        console.log(Math.round(1.1)); //1
+        console.log(Math.round(1.6)); //2
+        console.log(Math.round(-20.5)); // -20 离哪边更近取哪个，向上取大的
+        console.log(Math.round(-20.51));  //-21
+
+        // 取整函数 parseInt(1.2) // 1
+        // 取整函数 parse('12px') // 12
+
+        console.log(Math.max(1, 2, 3)); // 3
+        console.log(Math.min(1, 2, 3)); // 1
+        console.log(Math.abs(-1)); // 1
+
+        // null 类似 let obj = { } 空对象
+        let obj = null;
+    </script>
+</body>
+
+</html>
+
+<!-- 
+Math对象包含的方法有：
+Ø random：生成0-1之间的随机数（包含0不包括1）
+Ø ceil：向上取整  返回大于一个数的最小整数
+Ø floor：向下取整 返回小于一个数的最大整数
+Ø max：找最大数
+Ø min：找最小数
+Ø pow：幂运算
+Ø abs：绝对值
+ -->

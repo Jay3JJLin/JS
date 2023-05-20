@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的使用</title>
+</head>
+
+<body>
+    <script>
+        //1.声明对象
+        let pink = {
+            uname: `哟西`,
+            age: 18,
+            gender: `男`
+        }
+        // typeof 检测数据类型
+        // console.log(pink);
+        // console.log(typeof pink);
+        //改 把性别男改成包保密  常在外部
+        pink.gender = '保密';
+        // console.log(pink);
+        // 增 常在外部
+        pink.hobby = 'ctrl';
+        // console.log(pink);
+        //删(了解)
+        delete pink.age;
+        // console.log(pink);
+
+        //声明
+        let obj = {
+            "goods-name": `小米10青春版`,
+            num: `3120210911528`,
+            address: `中国大陆`
+        }
+
+        obj.name = `小米10 PLUS`;
+        obj.color = `pink`;
+        // console.log(obj);
+        for (let key in obj) {
+            console.log(key);
+        }
+
+        //查的另外一种属性
+        //对象名['属性名']
+        console.log(obj['goods-name']);
+
+        //2.使用属性 查 对象名.属性名
+        // console.log(obj.address);
+        // console.log(obj.name);
+
+        //查总结
+        //(1) 对象名.属性名 obj.age
+        console.log(obj.num);
+        //(2) 对象名['属性名'] obj[`age`]
+        console.log(obj['num']);
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+属性-查
+l 声明对象，并添加了若干属性后，可以使用 . 获得对象中属性对应的值，我称之为属性访问。
+l 语法：对象名.属性
+l 简单理解就是获得对象里面的属性值
+
+属性-查的另外一种写法
+l 对于多词属性或则 - 等属性，点操作就不能用了。
+l 我们可以采取： 对象[‘属性’] 方式， 单引号和双引号都阔以
+l 对象[‘属性’] 方式， 单引号和双引号都阔以
+l 也可以用于其他正常属性，比如：
+l []语法里面的值如果不添加引号 默认会当成变量解析
+总结：
+没有必要的时候直接使用点语法, 在需要解析变量的时候使用 [] 语法
+
+属性-改
+l 语法：对象名.属性 = 新值
+
+属性-增
+l 语法：对象名.新属性 = 新值
+
+属性-删 （了解）
+l 语法：delete 对象名.属性
+
+改和增语法一样，判断标准就是对象有没有这个属性，没有就是新增，有就是改
+
+
+-->

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历对象</title>
+</head>
+
+<body>
+    <script>
+        // for in 我们不推荐遍历数组
+        let arr = new Array('pink', 'red', 'blue');
+        for (let k in arr) {
+            // console.log(k);//数组的下标，索引号 但是是字符串 '0'
+            // console.log(arr[k]);//arr[k]
+        }
+        //1.遍历对象 for in
+        let obj = {
+            uname: 'pink',
+            age: 18,
+            gender: '男'
+        }
+        //2.遍历对象
+        for (let k in obj) {
+            console.log(k);// 属性名 'uname' 'age' 字符串' '
+            // console.log(obj.uname);
+            // console.log(obj.k);
+            // console.log(obj.'uname');
+            // console.log(obj['uname']); 'uname' === k
+            console.log(obj[k]);//输出属性值 obj[k]
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 
+遍历对象
+for 遍历对象的问题：
+Ø 对象没有像数组一样的length属性,所以无法确定长度
+Ø 对象里面是无序的键值对, 没有规律. 不像数组里面有规律的下标
+
+l 一般不用这种方式遍历数组、主要是用来遍历对象
+l for in语法中的 k 是一个变量, 在循环的过程中依次代表对象的属性名
+l 由于 k 是变量, 所以必须使用 [ ] 语法解析
+l 一定记住： k 是获得对象的属性名， 对象名[k] 是获得 属性值
+
+Ø 获得对象属性是 k
+Ø 获得对象值是 obj[k]
+ -->
