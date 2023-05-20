@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间解绑</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        const btn = document.querySelector('button');
+        // 传统 L0 写法
+        // btn.onclick = function () {
+        //     alert('点击了');
+        //     // L0 事件移除解绑 赋予空对象null
+        //     btn.onclick = null;
+        // }
+
+        // L2 事件移除解绑 写法 移除后就不会有响应了
+        function fn() {
+            alert('点击了哟西');
+        }
+        btn.addEventListener('click', fn)
+        btn.removeEventListener('click', fn)
+        // add 和 remove 对应 参数一致
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    on事件方式，直接使用null覆盖偶就可以实现事件的解绑
+    如：btn.onclick = null;
+
+    addEventListener方式，必须使用：
+    removeEventListener(事件类型, 事件处理函数, [获取捕获或者冒泡阶段])
+
+    注意：匿名函数无法被解绑
+ -->

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面尺寸事件</title>
+    <style>
+        div {
+            /* 转换为行内块，以内容大小为宽度 */
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            /* 不包含边框，但包含内外边距 */
+            border: 20px solid red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        const div = document.querySelector('div');
+        console.log(div.clientWidth);
+        // resize 是浏览器窗口大小发生变化的时候触发的事件
+        window.addEventListener('resize', function () {
+            let w = document.documentElement.clientWidth;
+            console.log(w);
+        })
+    </script>
+</body>
+
+</html>
+
+<!-- 
+l 会在窗口尺寸改变的时候触发事件：  
+Ø resize
+window.addEventListener('resize',function(){})
+l 检测屏幕宽度：
+window.addEventListener('resize', function () {
+    let w = document.documentElement.clientWidth;
+    console.log(w);
+})
+
+获取宽高：
+Ø 获取元素的可见部分宽高（不包含边框，margin，滚动条等）
+Ø clientWidth和clientHeight
+ -->

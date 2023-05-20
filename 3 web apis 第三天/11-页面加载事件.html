@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面加载事件</title>
+    <script>
+        // 等待页面所有资源加载完毕，就回去执行回调函数
+        // window.addEventListener('load', function () {
+        //     const btn = document.querySelector('button');
+        //     btn.addEventListener('click', function () {
+        //              alert('艹，走，忽略');
+        //     })
+        // })
+
+        // 等待图片加载完毕，再去执行里面的代码
+        // img.addEventListener('load', function () {
+
+        // })
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                alert('艹，走，忽略');
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>点击</button>
+
+</body>
+
+</html>
+
+<!-- 
+加载外部资源（如图片、外联CSS和JavaScript等）加载完毕时触发的事件
+l 事件名：load
+l 监听页面所有资源加载完毕：
+window.addEventListener('load',function(){})
+Ø 给 window 添加 load 事件
+l 注意：不光可以监听整个页面资源加载完毕，也可以针对某个资源绑定load事件
+
+当初始的 HTML 文档被完全加载和解析完成之后，DOMContentLoaded 事件被触发，而 无需 等待样式表、图像等完全加载
+l 事件名：DOMContentLoaded
+l 监听页面DOM加载完毕：
+Ø 给 document 添加 DOMContentLoaded 事件
+document.addEventListener('DOMContentLoaded',function(){})
+
+
+1. 页面加载事件有哪两个？如何添加？ 
+Ø load 事件
+Ø 监听整个页面资源给 window 加
+Ø DOMContentLoaded
+Ø 给 document 加
+Ø 无需等待样式表、图像等完全加载
+ -->
