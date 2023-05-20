@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改对象内容</title>
+</head>
+
+<body>
+    <div class="box">我是文字内容</div>
+
+    <script>
+        // const obj = {
+        //     name: 'pink老师'
+        // }
+        // console.log(obj.name);
+        // obj.name = 'red老师';
+
+        // 1.获取元素
+        const box = document.querySelector('.box');
+        // 2.修改文字内容 对象.innerText 属性
+        // console.log(box.innerText); //获取文字内容
+        // boc.innerText = '我是一个盒子';  //修改文字内容
+        // box.innerText = '<strong>我是一个盒子</strong>'; //不解析标签
+
+        // 3.innerHTML 解析标签
+        console.log(box.innerHTML);
+        // box.innerHTML = '我要更换';
+        box.innerHTML = '<strong>我要更换</strong>';
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+1. 元素innerText 属性
+Ø 将文本内容添加/更新到任意标签位置
+Ø 显示纯文本，不解析标签
+
+2. 元素.innerHTML 属性
+Ø 将文本内容添加/更新到任意标签位置
+Ø 会解析标签，多标签建议使用模板字符
+
+三者的区别是什么？
+Ø 元素.innerText 属性 只识别文本，不能解析标签
+Ø 元素.innerHTML 属性 能识别文本，能够解析标签
+Ø 如果还在纠结到底用谁，你可以选择innerHTML
+ -->

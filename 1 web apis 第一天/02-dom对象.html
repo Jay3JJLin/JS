@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom对象</title>
+</head>
+
+<body>
+    <!-- div 在html中叫标签 在JS中叫dom对象 -->
+    <div>114514</div> 
+    <script>
+        const div = document.querySelector('div');
+        // 打印对象
+        console.dir(div); // div dom对象
+    </script>
+</body>
+
+</html>
+
+<!-- 
+作用和分类
+l 作用: 就是使用 JS 去操作 html 和浏览器
+l 分类：DOM (文档对象模型)、BOM（浏览器对象模型）
+
+什么是DOM
+l DOM（Document Object Model——文档对象模型）是用来呈现以及与任意 HTML 或 XML文档交互的API
+l 白话文：DOM是浏览器提供的一套专门用来 操作网页内容 的功能
+l DOM作用
+Ø 开发网页内容特效和实现用户交互
+
+DOM树是什么
+Ø 将 HTML 文档以树状结构直观的表现出来，我们称之为文档树或 DOM 树
+Ø 描述网页内容关系的名词
+Ø 作用：文档树直观的体现了标签与标签之间的关系
+
+DOM对象（重要）
+l DOM对象：浏览器根据html标签生成的 JS对象
+Ø 所有的标签属性都可以在这个对象上面找到
+Ø 修改这个对象的属性会自动映射到标签身上
+l DOM的核心思想
+Ø 把网页内容当做对象来处理
+l document 对象
+Ø 是 DOM 里提供的一个对象
+Ø 所以它提供的属性和方法都是用来访问和操作网页内容的
+ü 例：document.write()
+Ø 网页所有内容都在document里面
+
+
+总结：
+1. DOM 树是什么？
+Ø 将 HTML 文档以树状结构直观的表现出来，我们称之为文档树或 DOM
+树
+Ø 作用：文档树直观的体现了标签与标签之间的关系
+2. DOM对象怎么创建的？
+Ø 浏览器根据html标签生成的 JS对象（DOM对象）
+Ø DOM的核心就是把内容当对象来处理
+3. document 是什么？
+Ø 是 DOM 里提供的一个对象
+Ø 网页所有内容都在document里面
+ -->
+

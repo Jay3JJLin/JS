@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let和const</title>
+</head>
+
+<body>
+    <script>
+        <!-- const -->
+        const arr = ['red', 'pink'];
+        // arr.push('blue');//追加修改元素只会影响里面的元素值，不会影响地址，所以数组，对象等等引用可以用cosnt
+        // console.log(arr);
+
+        // arr = [1,2,4];
+        // console.log(arr); //错误
+        // 此时报错是因为对象发生了变化，即栈中地址发生变化，所以const冲突
+
+        // 只要栈中值或址发生变化，就不能用const声明
+        // 只要再次出现{},则表示值或址发生变化不能用const声明
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+变量声明
+l const 声明的值不能更改，而且const声明变量的时候需要里面进行初始化
+l 但是对于引用数据类型，const声明的变量，里面存的不是 值，不是值，不是值，是 地址 。
+-->
+
+<!-- 
+1. 以后声明变量我们优先使用哪个？
+Ø const
+Ø 有了变量先给const，如果发现它后面是要被修改的，再改为let
+2. 为什么const声明的对象可以修改里面的属性？
+Ø 因为对象是引用类型，里面存储的是地址，只要地址不变，就不会报错
+Ø 建议数组和对象使用 const 来声明
+3. 什么时候使用let声明变量？
+Ø 如果基本数据类型的值或者引用类型的地址发生变化的时候，需要用let
+Ø 比如 一个变量进行加减运算，比如 for循环中的 i++
+ -->
