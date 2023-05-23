@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5秒自动关闭的广告</title>
+    <style>
+        img {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/ad.png" alt="">
+    <script>
+        // 1.获取元素
+        const img = document.querySelector('img');
+        // 利用定时器关闭
+        setTimeout(function () {
+            img.style.display = 'none';
+        }, 3000)
+    </script>
+</body>
+
+</html>
+
+<!-- 
+需求：5秒钟之后，广告自动消失
+分析：
+①：设置延时函数
+②：隐藏元素
+ -->

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage存储</title>
+</head>
+
+<body>
+    <script>
+        // 1.存储一个名字 uname,pink老师
+        // localStorage.setItem('键','值');
+        localStorage.setItem('uname', 'pink老师');//一定要加引号
+        // 2.获取方式 键都加引号 得到的是value
+        console.log(localStorage.getItem('uname'));
+        // 3.删除本地存储 删除名字
+        console.log(localStorage.removeItem('uname'));
+        // 4.改 如果原来有这个键，则是改，如果没有这个键就是增
+        localStorage.setItem('uname', '呱');
+
+
+        // 存一个年龄
+        // 本地存储只能存储字符串数据类型
+        localStorage.setItem('age', 18);//除了数字型都要加引号,也可以都加，因为存储的是字符串类型
+        console.log(localStorage.getItem('age'));
+    </script>
+</body>
+
+</html>
+
+<!-- 
+本地存储分类- localStorage
+作用: 可以将数据永久存储在本地(用户的电脑), 除非手动删除，否则关闭页面也会存在
+特性：
+可以多窗口（页面）共享（同一浏览器可以共享）
+以键值对的形式存储使用
+
+语法: 
+存储数据：
+localStorage.setItem(key, value)
+获取数据：
+localStorage.getItem(key) 里面是键
+删除数据：
+localStorage.removeItem(key)
+
+
+本地存储分类- sessionStorage
+特性：
+生命周期为关闭浏览器窗口
+在同一个窗口(页面)下数据可以共享
+以键值对的形式存储使用
+用法跟localStorage 基本相同
+ -->
