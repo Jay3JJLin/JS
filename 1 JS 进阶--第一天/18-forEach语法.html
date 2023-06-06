@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach语法</title>
+</head>
+
+<body>
+    <script>
+        // forEach 就是遍历，不返回数组 
+        // 可以视为加强版的for循环
+        // 适合于遍历数组对象
+        const arr = ['red', 'green', 'pink'];
+        const res1 = arr.forEach(function (item, index) {
+            console.log(item);//数组元素
+            console.log(index);//元素下标 索引号
+        })
+
+        // map遍历并返回数组
+        const res2 = arr.map(function (item, index) {
+            console.log(item);//数组元素
+            console.log(index);//元素下标 索引号
+            return item;
+        })
+
+        console.log(res1);//undefined
+        console.log(res2.join());//red,green,pink
+        // join() 方法用于把数组中的所有元素转换一个字符串
+    </script>
+</body>
+
+</html>
+
+<!-- 
+forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数
+主要使用场景： 遍历数组的每个元素
+语法：
+    被遍历的数组.forEach(function(当前数组元素,当前元素索引号){
+        函数体
+    })
+
+注意：
+1. forEach 主要是遍历数组
+2. 参数当前数组元素是必须要写的， 索引号可选。
+ -->

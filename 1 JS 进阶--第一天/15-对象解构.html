@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象解构</title>
+</head>
+
+<body>
+    <script>
+        // 对象解构
+        const obj = {
+            uname: '呱',
+            age: 18
+        }
+        // const uname = '哟西';
+
+        // 对象解构语法
+        // 由于对象是无序的，所以要求名字要一模一样，即使顺序乱了，也能找到，反观数组解构是有序的，一一对应的
+        // 要求 变量名 必须与 属性名 相同，才能解构
+        // const { uname, age } = {
+        //     uname: '呱',
+        //     age: 18
+        // }
+        // // 等价于 const uname = obj.uname
+        // console.log(uname);
+        // console.log(age);
+
+        // 1.对象解构的变量名 可以重新命名 是 旧变量名: 新变量名
+        //冒号表示“什么值：赋值给谁” 左赋值给右
+        // const { uname: username, age } = {
+        //     uname: '呱',
+        //     age: 18
+        // }
+        // // 等价于 const uname = obj.uname
+        // console.log(username);
+        // console.log(age);
+
+        // 2.解构数组对象
+        const pig = [
+            {
+                uname: '佩奇',
+                age: 6
+            }
+        ]
+        const [{ uname: username, age }] = pig;
+        console.log(username);
+        console.log(age);
+    </script>
+</body>
+
+</html>
+
+<!-- 
+对象解构是将对象属性和方法快速批量赋值给一系列变量的简洁语法
+1. 基本语法：
+1. 赋值运算符 = 左侧的 {} 用于批量声明变量，右侧对象的属性值将被赋值给左侧的变量
+2. 对象属性的值将被赋值给与属性名 相同 的变量
+3. 注意解构的变量名不要和外面的变量名 冲突 否则报错
+4.对象中找不到与变量名一致的属性时变量值为 undefined
+ -->

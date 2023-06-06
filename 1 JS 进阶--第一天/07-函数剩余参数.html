@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数剩余参数</title>
+</head>
+
+<body>
+    <script>
+        function getSum(a, b, ...arr) {
+            console.log(arr);//使用时不需要...
+        }
+        // 剩余参数 ...数组名
+        getSum(2, 3);//此时...arr没有传入，为空
+        getSum(1, 2, 3, 4, 5);//此时...arr为后面3个数字
+    </script>
+</body>
+
+</html>
+
+<!--
+2. 剩余参数
+1. ... 是语法符号，置于最末函数形参之前，用于获取多余的实参
+2. 借助 ... 获取的剩余实参，是个真数组
+开发中，还是提倡多使用 剩余参数
+
+1. 剩余参数主要的使用场景是？
+Ø 用于获取多余的实参 由于不确定多少个参数
+2. 剩余参数和动态参数区别是什么？开发中提倡使用哪一个？
+Ø 动态参数是伪数组
+Ø 剩余参数是真数组
+Ø 开发中使用剩余参数想必也是极好的
+
+分清楚剩余参数与展开运算符的区别
+在函数参数内部的是 剩余参数
+在函数参数外部的是 展开运算符
+
+剩余参数：函数参数使用，得到真数组
+展开运算符：数组中使用，数组展开
+ -->

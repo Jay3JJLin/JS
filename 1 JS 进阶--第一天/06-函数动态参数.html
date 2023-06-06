@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数动态参数</title>
+</head>
+
+<body>
+    <script>
+        function getSum() {
+            // arguments 动态参数 只存在于 函数里面
+            // 1.是个伪数组
+            let sum = 0;
+            // console.log(arguments);
+            // arguments动态获取传过来的实参
+            for (let i = 0; i < arguments.length; i++) {
+                // 求和
+                sum += arguments[i];
+            }
+            console.log(sum);
+        }
+        // 传 实参
+        getSum(2, 3, 4);
+        getSum(1, 1, 4, 5, 1, 4);
+    </script>
+</body>
+
+</html>
+
+<!-- 
+1. 动态参数
+arguments 是函数内部内置的伪数组变量，它包含了调用函数时传入的所有实参
+总结：
+1. arguments 是一个伪数组，只存在于函数中
+2. arguments 的作用是动态获取函数的实参
+3. 可以通过for循环依次得到传递过来的实参
+
+1. 当不确定传递多少个实参的时候，我们怎么办？
+Ø arguments 动态参数
+2. arguments是什么？
+Ø 伪数组
+Ø 它只存在函数中
+ -->

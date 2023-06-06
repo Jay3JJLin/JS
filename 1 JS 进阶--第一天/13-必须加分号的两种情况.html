@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>必须加分号的两种情况</title>
+</head>
+
+<body>
+    <script>
+        // 1.立即执行函数
+        (function () { })();
+        (function () { })();
+        // 2.使用数组的时候
+        const arr = [1, 2, 3];
+        const str = 'pink';//这里必须有分号
+        [1, 2, 3].map(function (item) {
+            // map中 item 得到数组元素
+            // 要return 才会返回数组
+            console.log(item);
+        })
+    </script>
+</body>
+
+</html>
+
+<!-- 
+注意： js 前面必须加分号情况
+1. 立即执行函数
+2. 数组解构
+ -->

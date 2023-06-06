@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数的基本语法</title>
+</head>
+
+<body>
+    <script>
+        // 普通函数
+        // const fn = function () {
+        // console.log(123);
+        // }
+
+        // 箭头函数 主要替代函数表达式,匿名函数
+        // 1.基本语法 (形参变量) => {函数体}
+        // 形参可以为空 () => { 函数体 }
+        // const fn = (x) => {
+        //     console.log(x);
+        // }
+        // fn(12);
+
+        // 2.只有一个形参时，可以省略小括号()，当没有()或者两个及以上的参数时均不可省略()
+        // const fn = x => {
+        //     console.log(x);
+        // }
+        // fn(555);
+
+        // 3.只有一行代码时，可以省略大括号{}
+        // const fn = x => console.log(x);
+        // fn(1);
+
+        // 4.只有一行代码的时候,可以省略return 
+        // const fn = x => x + x;
+        // console.log(fn(1));
+
+        // 5.箭头函数可以直接返回一个对象 对象表达式
+        // 加括号的函数体返回对象字面量表达式
+        const fn = (uname) => ({ uname: uname })//{属性名:属性值}
+        console.log(fn('呱'));
+    </script>
+</body>
+
+</html>
+
+<!-- 
+目的：引入箭头函数的目的是更简短的函数写法并且不绑定this，箭头函数的语法比函数表达式更简洁
+使用场景：箭头函数更适用于那些本来需要匿名函数的地方
+
+1. 箭头函数属于表达式函数，因此不存在函数提升
+2. 箭头函数只有一个参数时可以省略圆括号 ()
+3. 箭头函数函数体只有一行代码时可以省略花括号 {}，并自动做为返回值
+被返回
+4. 加括号的函数体返回对象字面量表达式
+ -->

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数的this</title>
+</head>
+
+<body>
+    <script>
+        // // 以前this的指向s 谁调用这个函数，this就指向谁
+        // console.log(this);//指向window
+        // // 普通函数
+        // function fn() {
+        //     console.log(this);//指向window
+        // }
+        // window.fn();
+
+        // // 对象方法里面的this
+        // const obj = {
+        //     name: 'andy',
+        //     sayHai: function () {
+        //         console.log(this);//obj
+        //     }
+        // }
+        // obj.sayHai();
+
+        // 2.箭头函数的this 是上一层作用域的this 指向
+        // const fn = () => {
+        //     console.log(this);
+        // }
+        // fn();//window
+
+        // 对象方法箭头函数的this
+        // const obj = {
+        //     uname: '鸡你太美',
+        //     sayHi: () => {
+        //         console.log(this);//this指向 window
+        //     }
+        // }
+        // obj.sayHi();//window
+        // 箭头函数sayHi中没有this,沿用上一级obj的this，window调用obj，所以this指向window
+
+        const obj = {
+            uname: '鸡你太美',
+            sayHi: function () {
+                console.log(this);//obj调用，则指向obj
+                let i = 10;
+                const count = () => {
+                    console.log(this);//obj
+                }
+            }
+        }
+        obj.sayHi();
+    </script>
+</body>
+
+</html>
+
+<!-- 
+3. 箭头函数 this
+在箭头函数出现之前，每一个新函数根据它是被如何调用的来定义这个函数的this值， 非常令人讨厌。
+箭头函数不会创建自己的this,它只会从自己的作用域链的上一层沿用this。
+
+在开发中【使用箭头函数前需要考虑函数中 this 的值】，事件回调函数使用箭头函数时，this 为全局的 window，因此
+DOM事件回调函数为了简便，还是不太推荐使用箭头函数
+
+1. 箭头函数里面有this吗？
+Ø 箭头函数不会创建自己的this,它只会从自己的作用域链的上一层沿用this
+2. DOM事件回调函数推荐使用箭头函数吗？
+不太推荐，特别是需要用到this的时候
+事件回调函数使用箭头函数时，this 为全局的 window
+ -->
