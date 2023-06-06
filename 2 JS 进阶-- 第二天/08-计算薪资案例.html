@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算薪资案例</title>
+</head>
+
+<body>
+    <script>
+        // 对象数组
+        const arr = [{
+            name: '张三',
+            salary: 10000
+        }, {
+            name: '李四',
+            salary: 10000
+        }, {
+            name: '王五',
+            salary: 10000
+        },
+        ]
+        //计算薪资案例
+        // 当初始值是对象数组这种形式的，第二个参数即初始值一定不能省 
+        const total1 = arr.reduce((prev, curv) => {
+            // prev和curv里面是对象
+            return prev + curv.salary;//对象的属性累加
+        }, 0)//一定要设置初始值
+        console.log(total1);
+
+        // 上一次值   当前值   返回值 (一次循环)
+        //    0       10000   10000 第一次遍历
+        //  10000     10000   20000 第2次遍历
+        //  20000     10000   30000 第3次遍历
+
+
+        // 需求:每人涨薪30%,当月支出多少薪资
+        const total2 = arr.reduce((prev, curv) => prev + curv.salary * 1.3, 0);
+        console.log(total2);//39000
+
+        // 上一次值   当前值   返回值 (一次循环)
+        //    0       13000   13000 第一次遍历
+        //  13000     13000   26000 第2次遍历
+        //  26000     13000   39000 第3次遍历
+    </script>
+</body>
+
+</html>
+<!-- 
+需求：
+①：给员工每人涨薪 30%
+②：然后计算需要支出的费用
+数据：
+ -->

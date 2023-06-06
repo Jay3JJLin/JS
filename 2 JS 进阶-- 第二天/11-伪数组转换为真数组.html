@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪数组转换为真数组</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // Array.from(伪数组名) 把伪数组转换为真数组
+        const lis = document.querySelectorAll('li');//lis是伪数组
+        console.log(lis);
+        // lis.pop();//伪数组没有这个方法
+        const liss = Array.from(lis);//转换为真数组
+        liss.pop();//删除最后一个元素，会改变数组长度
+        console.log(liss);
+    </script>
+</body>
+
+</html>
+
+<!-- 
+2. 数组常见方法- 伪数组转换为真数组
+静态方法 Array.from()
+ -->

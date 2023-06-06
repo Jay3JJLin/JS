@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array常用方法</title>
+    <style>
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/Array常见方法.png" alt="">
+    <script>
+        // find join every 重点
+        const arr = [
+            {
+                name: '小米',
+                price: 2999
+            },
+            {
+                name: '华为',
+                price: 3999
+            },
+            {
+                name: '小米',
+                price: 5999
+            }
+        ]
+
+
+        // find 查找
+        // 找小米 这个对象，并返回这个对象
+        // const mi = arr.find(function (item) {
+        //     // console.log(item);// item是对象
+        //     // console.log(item.name);
+        //     // console.log('呱');// 一次找到 就结束
+        //     return item.name === '小米';
+        // })
+        // console.log(mi);//返回第一个满足条件的数据
+
+        // 箭头函数写法
+        const mi = arr.find(item => item.name === '小米');
+        console.log(mi);//返回第一个满足条件的数据
+
+
+        // 2.every 每一个是否都符合条件，如果都符合则返回 true，否则返回false
+        const arr1 = [10, 20, 30];
+        const res1 = arr1.every(item => item >= 10);
+        console.log(res1);//true
+    </script>
+</body>
+
+</html>

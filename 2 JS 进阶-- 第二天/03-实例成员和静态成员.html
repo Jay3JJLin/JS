@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实例成员和静态成员</title>
+</head>
+
+<body>
+    <script>
+        // 实例成员和静态成员
+        // 1.实例成员: 实例对象上的属性和方法属于实例成员
+        function Pig(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        const peiqi = new Pig('佩奇', 6);
+        const qiaozhi = new Pig('乔治', 3);
+        peiqi.name = '小猪佩奇';//实例属性
+        peiqi.sayHi = () => { //实例方法
+            console.log('hi~~~');
+        }
+        console.log(peiqi);
+        console.log(qiaozhi);
+        console.log(peiqi === qiaozhi);//false
+
+        // 2.静态成员
+        Pig.eyes = 2;//静态属性
+        Pig.sayHei = function () {//静态方法
+            console.log(this);
+        }
+        
+        // 静态成员只能通过构造函数来访问
+        console.log(Pig.eyes); //2
+        Pig.sayHei();//指向构造函数
+    </script>
+</body>
+
+</html>
+
+<!-- 
+实例成员：
+通过构造函数创建的对象称为实例对象，实例对象中的属性和方法称为实例成员。
+
+说明：
+1. 实例对象的属性和方法即为实例成员
+2. 为构造函数传入参数，动态创建结构相同但值不同的对象
+3. 构造函数创建的实例对象彼此独立互不影响。
+
+
+静态成员：
+构造函数的属性和方法被称为静态成员
+
+说明：
+1. 构造函数的属性和方法被称为静态成员
+2. 一般公共特征的属性或方法静态成员设置为静态成员
+3. 静态成员方法中的 this 指向构造函数本身
+
+
+1. 什么是实例成员？
+实例对象的属性和方法即为实例成员
+实例对象相互独立，实例成员由当前实例对象使用
+2. 什么是静态成员？
+ 构造函数的属性和方法被称为静态成员
+静态成员只能通过构造函数访问
+ -->

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自己定义构造函数创建对象</title>
+</head>
+
+<body>
+    <script>
+        // 创建一个猪 构造函数
+        // function Pig(uname, age) {
+        //     //前面uname是属性 后面uname是形参，this指向调用者(谁创建就指向谁)
+        //     //相当于给空对象添加这个属性
+        //     this.uname = uname;
+        //     this.age = age;
+        // }
+        // const page = new Pig('佩奇', 6);
+        // const george = new Pig('乔治', 3);
+        // console.log(page);
+        // console.log(george);
+
+
+        // 需求：
+        // ①：写一个Goods构造函数
+        // ②：里面包含属性 name 商品名称 price 价格 count 库存数量
+        // ③：实例化多个商品对象，并打印到控制台，例如
+        // 小米 1999 20 
+        // 华为 3999 59 
+        // vivo 1888 100
+        function Goods(name, price, count) {
+            this.name = name;
+            this.price = price;
+            this.count = count;
+        }
+        const xiaomi = new Goods('小米', 1999, 20);
+        const huawei = new Goods('华为', 3999, 59);
+        const vivo = new Goods('vivo', 1888, 100);
+        console.log(xiaomi, huawei, vivo);
+
+        const date = new Date('2023-6-3');
+        console.log(date);
+    </script>
+</body>
+
+</html>
+
+<!-- 
+ 构造函数 ：是一种特殊的 函数，主要用来 初始化 对象
+ 使用场景：常规的 {...} 语法允许创建一个对象。比如我们创建了佩奇的对象，继续创建乔治的对象还需要重新写一遍，此时可以通过构造函数来快速创建 多个类似 的对象。
+
+构造函数在技术上是常规函数。
+不过有两个约定：
+1. 它们的命名以大写字母开头。
+2. 它们只能由 "new" 操作符来执行。
+
+ 构造函数语法：大写字母开头的函数
+ 创建构造函数：
+说明：
+1. 使用 new 关键字调用函数的行为被称为实例化
+2. 实例化构造函数时没有参数时可以省略 ()
+3. 构造函数内部无需写return，返回值即为新创建的对象
+4. 构造函数内部的 return 返回的值无效，所以不要写return
+5. new Object（） new Date（） 也是实例化构造函数
+
+
+1. 构造函数的作用是什么？怎么写呢？
+ 构造函数是来快速创建多个类似的对象
+ 大写字母开头的函数
+2. new 关键字调用函数的行为被称为？
+ 实例化
+3. 构造函数内部需要写return吗，返回值是什么？
+ 不需要
+ 构造函数自动返回创建的新的对象
+
+
+
+ -->

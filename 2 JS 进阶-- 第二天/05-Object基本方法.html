@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object基本方法</title>
+</head>
+
+<body>
+    <script>
+        const o = { uname: 'pink', age: 18 };
+        // 1.获得所有的属性名
+        console.log(Object.keys(o));//返回数组['uname','age'] 属性名
+
+        // 2.获得所有属性值
+        console.log(Object.values(o));//['pink',18] 属性值
+
+        // 3.对象的拷贝assign
+        const oo = {};
+        Object.assign(oo, o);
+        console.log(oo);
+
+        // 4.assign经常用来给对象添加属性
+        Object.assign(o, { gender: '女' });
+        console.log(o);
+    </script>
+</body>
+
+</html>
+
+<!-- 
+学习三个常用静态方法（静态方法就是只有构造函数Object可以调用的）
+
+作用：Object.keys 静态方法获取对象中所有属性（键）
+语法：Object.keys(对象名)
+注意： 返回的是一个数组
+
+ 作用：Object.values 静态方法获取对象中所有属性值
+Object.values(对象名)
+
+ 作用：Object.assign 静态方法常用于对象拷贝
+使用场景:经常用来给对象添加属性
+语法:Object.assign(接收者,拷贝者);
+ -->

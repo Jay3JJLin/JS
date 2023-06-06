@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toFixed方法</title>
+</head>
+
+<body>
+    <script>
+        // toFixed 方法可以让数字指定保留的小数位数
+
+        // 数值类型
+        const price = 12.345;
+        const num = 10;
+
+        // 保留两位小数 四舍五入 
+        // 如果不填具体保留位数，则默认保留整数(四舍五入)
+        console.log(price.toFixed(2));//12.35
+        // 整数也可以保留小数
+        console.log(num.toFixed(2));//10.00
+    </script>
+</body>
+
+</html>
+
+<!-- 
+Number 是内置的构造函数，用于创建数值
+常用方法：
+toFixed() 设置保留小数位的长度
+ -->
