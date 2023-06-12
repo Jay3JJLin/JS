@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象原型</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数的原型 叫 原型(对象)，
+        // 实例对象里的原型叫 对象原型
+        function Star() {
+
+        }
+        const Jay = new Star();
+        // 对象原型__proto__ 指向 该构造函数的原型对象
+        // 构造函数  实例对象__proto__  原型对象prototype 构成三角关系
+
+        // 对象原型__proto__ 指向 原型对象prototype
+        console.log(Jay.__proto__ === Star.prototype);//true
+        // 对象原型里面也有constructor 指向构造函数 Star
+        console.log(Jay.__proto__.constructor === Star);//true
+    </script>
+</body>
+
+</html>
+
+<!-- 
+对象都会有一个属性 __proto__ 指向构造函数的 prototype 原型对象，之所以我们对象可以使用构造函数 prototype 原型对象的属性和方法，就是因为对象有 __proto__ 原型的存在
+
+注意：
+__proto__ 是JS非标准属性
+[[prototype]]和__proto__意义相同
+用来表明当前实例对象指向哪个原型对象prototype
+__proto__对象原型里面也有一个 constructor属性，指向创建该实例对象的构造函数
+
+1. prototype是什么？哪里来的？
+ 原型（原型对象）
+ 构造函数都自动有原型
+2. constructor属性在哪里？作用干啥的？
+ prototype原型和对象原型__proto__里面都有
+ 都指向创建实例对象/原型的构造函数
+3. __proto__属性在哪里？指向谁？
+ 在实例对象里面
+ 指向原型 prototype
+ -->

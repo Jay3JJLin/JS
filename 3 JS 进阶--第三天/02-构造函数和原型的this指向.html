@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数和原型的this指向</title>
+</head>
+
+<body>
+    <script>
+        let that;
+        function Star(uname) {
+            that = this;
+            this.uname = uname;
+        }
+        // 2.原型对象里面的函数this指向的还是 实例对象Jay
+        Star.prototype.sing = () => {
+            console.log('呱');
+        }
+
+        // 实例对象 Jay
+        // 1.构造函数里面的 this 就是 实例对象 Jay
+        const Jay = new Star('周杰伦');
+        Jay.sing();
+        console.log(that === Jay);//true
+    </script>
+</body>
+
+</html>
+
+<!-- 
+构造函数和原型对象中的this 都指向 实例化的对象
+ -->

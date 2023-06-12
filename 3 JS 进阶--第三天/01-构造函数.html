@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数 公共的属性和方法 封装到构造函数里面去
+        // 注意：箭头函数不能作为构造函数,原因如下:
+        // (1)没有单独的this
+        // (2)不绑定arguments
+        // (3)箭头函数不能用作构造器,和new一起用会抛出错误
+        // (4)箭头函数没有prototype属性
+
+        // 1.公共的属性写到构造函数Star里面
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            // this.sing = () => {
+            //     console.log('呱');
+            // }
+        }
+        // 2.公共的方法写到原型对象 Star.prototype 身上
+        Star.prototype.sing = () => {
+            console.log('呱');
+        }
+
+        const Jay = new Star('周杰伦', 44);
+        const JJ = new Star('林俊杰', 42);
+        console.log(Jay.sing === JJ.sing);//true,相当于共用方法sing
+
+        // 每一个构造函数都有一个 prototype 属性，指向另一个对象，所以我们也称为原型对象
+        console.log(Star.prototype);// Object 是个对象
+    </script>
+</body>
+
+</html>
+
+<!-- 
+
+ 封装是面向对象思想中比较重要的一部分，js面向对象可以通过构造函数实现的封装。
+ 同样的将变量和函数组合到了一起并能通过 this 实现数据的共享，所不同的是借助构造函数创建出来的实例对象之
+间是彼此不影响的
+总结：
+1. 构造函数体现了面向对象的封装特性
+2. 构造函数实例创建的对象彼此独立、互不影响
+
+1. Js 实现面向对象需要借助于谁来实现？
+ 构造函数
+2. 构造函数存在什么问题？
+ 浪费内存
+
+目标：能够利用原型对象实现方法共享
+ 构造函数通过原型分配的函数是所有对象所 共享的。
+ JavaScript 规定，每一个构造函数都有一个 prototype 属性，指向另一个对象，所以我们也称为原型对象
+ 这个对象可以挂载函数，对象实例化不会多次创建原型上函数，节约内存
+ 我们可以把那些不变的方法，直接定义在 prototype 对象上，这样所有对象的实例就可以共享这些方法。
+ 构造函数和原型对象中的this 都指向 实例化的对象
+
+1. 原型是什么 ？
+ 一个对象，我们也称为 prototype 为原型对象
+2. 原型的作用是什么 ？
+ 共享方法
+ 可以把那些不变的方法，直接定义在 prototype 对象上
+3. 构造函数和原型里面的this指向谁 ？
+ 实例化的对象
+ -->
