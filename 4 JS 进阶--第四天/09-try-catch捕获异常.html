@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try-catch捕获异常</title>
+</head>
+
+<body>
+    <p>123</p>
+    <script>
+        function fn() {
+            try {
+                // 可能发生错误的代码 要写到 try
+                const p = document.querySelector('.p');
+                p.style.color = 'red';
+            } catch (err) {
+                // 拦截错误，提示浏览器提供的错误信息，但不会中断程序的执行
+                console.log(err.message);
+                // throw 抛出异常信息，程序也会终止执行
+                throw new Error('真的太逊了');
+                //需要加 return 中断程序
+                // return;
+            } finally {
+                // 不管程序对不对，一定会执行的代码
+                console.log('伞兵一号，准备就绪');
+            }
+            console.log('呱');
+        }
+        fn();
+    </script>
+</body>
+
+</html>
+
+<!-- 
+我们可以通过try / catch 捕获错误信息（浏览器提供的错误信息） try 试试 catch 拦住 finally 最后
+总结：
+1. try...catch 用于捕获错误信息
+2. 将预估可能发生错误的代码写在 try 代码段中
+3. 如果 try 代码段中出现错误后，会执行 catch 代码段，并截获到错误信息
+4. finally 不管是否有错误，都会执行
+
+
+1. 捕获异常我们用那3个关键字？可能会出现的错误代码写到谁里面
+ try catch finally
+ try
+2. 怎么调用错误信息？
+ 利用catch的参数
+
+我们可以通过try / catch 捕获错误信息（浏览器提供的错误信息）
+ -->

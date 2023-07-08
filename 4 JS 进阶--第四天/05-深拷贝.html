@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深拷贝</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            uname: 'pink',
+            age: 18,
+            hobby: ['乒乓球', '足球'],
+            family: {
+                baby: '小pink'
+            }
+        }
+        const o = {};
+        // 拷贝函数
+        function deepCopy(newObj, oldObj) {
+            debugger;
+            // newObj 最开始是 空对象 {} k 是变量
+            for (let k in oldObj) {
+                // 处理数组浅拷贝问题 k是变量
+                // 这里的if有顺序 必须是 先数组Array 后是Object 不能颠倒,否则会造成属性混乱(万物皆对象)
+                if (oldObj[k] instanceof Array) {
+                    newObj[k] = [];//创建同类型新对象,数组
+                    // newObj[k] 接收方 hobby
+                    // oldObj[k] 实际为 ['乒乓球', '足球']
+                    deepCopy(newObj[k], oldObj[k]);//递归
+                    // 注意:遍历数组时,k 为索引号,oldObj[k]为数组中元素
+                } else if (oldObj[k] instanceof Object) {
+                    newObj[k] = {};//创建同类型新对象,对象
+                    // newObj[k] 接收方 family
+                    // oldObj[k] 实际为 {baby: '小pink'}
+                    deepCopy(newObj[k], oldObj[k]);//递归
+                    // 注意:遍历数组时,k 为索引号,oldObj[k]为对象中的属性
+                } else {
+                    // k 属性名 oldObj[k] 属性值
+                    // newObj[k] === o.uname;
+                    // newObj[k] 在没赋值前 只有属性 没有值
+                    newObj[k] = oldObj[k];
+                }
+            }
+        }
+        deepCopy(o, obj);//函数调用 两个参数 o 新对象 obj 旧对象
+
+        // console.log(o);//修改前
+        o.age = 20;
+        o.hobby[0] = '篮球';
+        o.family.baby = '呱';
+
+        console.log(o);//修改后
+        console.log(obj);//o修改没有对obj造成影响
+    </script>
+</body>
+
+</html>
+
+<!-- 
+1. 通过递归函数实现深拷贝
+2. js库lodash里面cloneDeep内部实现了深拷贝
+3. 通过JSON.stringify()实现
+
+JS中的基本数据类型:String Number Boolean Null Undefined 在赋值的过程中都是深拷贝
+
+面试，说说深拷贝:
+1.深拷贝是做的 拷贝出来的这个新对象，不会影响旧对象，要想实现深拷贝，最基本的,用到函数递归
+2.在普通拷贝(简单数据类型)的时候，直接赋值就行，但是在遇到 数组 的时候，再次调用这个递归即可
+3.如果遇到的是 对象形式，再次利用递归，把对象问题解决
+4.一定是 先数组Array 后 对象Object
+ -->

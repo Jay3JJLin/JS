@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除定时器的问题</title>
+</head>
+
+<body>
+    <script>
+        let timer = null;
+        timer = setTimeout(() => {
+            clearTimeout(timer);
+            console.log(timer);//1
+        }, 1000)
+        clearInterval
+        // 在定时器里面是无法利用clearTimer()或者clearInterval()来清除定时器的,因为定时器还在运作,所以使用timer = null 而不是 clearTimeout(timer)
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+总结 性能优化
+
+防抖: 单位时间内,频繁触发事件,只执行最后一次
+使用场景: 搜索框输入,手机号,邮箱验证输入检测
+
+节流:单位时间内,频繁触发事件,只执行一次
+使用场景:高频事件：鼠标移动mousemove,页面尺寸缩放resize,滚动条滚动scroll
+ -->

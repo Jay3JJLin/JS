@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>性能优化之防抖</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+            color: #fff;
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script src="./lodash.min.js"></script>
+    <script>
+        // 利用防抖实现性能优化
+        // 需求：鼠标在盒子上滑动，里面的数字就会变化+1
+        const box = document.querySelector('.box');
+        let i = 1;
+        const mouseMove = () => {
+            box.innerHTML = i++;
+            // 如果里面存在大量消耗性能的代码，比如DOM操作，比如数据处理，可能造成卡顿
+
+        }
+        // 添加事件
+
+        // 利用lodash库实现防抖,500ms之后采取+1
+        // 语法：_.debounce(fun,时间)
+        // box.addEventListener('mousemove', _.debounce(mouseMove, 500));//最后一次移动，时间到了才执行
+
+
+        // 手写防抖函数
+        // 核心是利用setTimeout定时器来实现
+        // 1.声明定时器变量
+        // 2.每次鼠标移动（事件触发）的时候都要先判断是否有定时器，如果有则先清除以前的定时器
+        // 3.如果没有定时器，则开启定时器，存入到定时器变量中
+        // 4.定时器里面写函数调用
+        function debounce(fn, t) {
+            let timer;
+            // 为了鼠标移动能反复执行,需要return 返回一个匿名函数
+            return function () {//闭包
+                // 2,3,4
+                if (timer) clearInterval(timer);
+                timer = setTimeout(function () {
+                    fn();//加小括号调用fn函数
+                }, t)
+            }
+        }
+        // 由于这里debounce函数加了(),所以打开网页会立即执行调用,鼠标滑动不会再次触发,也就是说后面的参数不是函数,不是可以被重复调用执行的函数
+        // 故 需要return一个函数 每次滑动则调用执行
+        box.addEventListener('mousemove', debounce(mouseMove, 500));
+
+        // debounce(mouseMove,500);//调用函数
+        // debounce(mouseMove,500) = function(){2,3,4};
+    </script>
+</body>
+
+</html>
+
+<!-- 
+ 防抖（debounce）
+所谓防抖，就是指触发事件后在 n 秒内函数只能执行一次，如果在 n 秒内又触发了事件，则会重新计算函数执行时间
+
+1.防抖是什么
+    单位时间内，频繁触发事件，只执行最后一次
+2.有什么使用场景
+    (1)搜索框搜索输入，只需用户最后一次输入完，再发送请求
+    (2)手机号，邮箱验证输入检测
+
+实现方式：
+1.lodash提供的防抖来处理
+2.手写一个防抖函数
+ -->

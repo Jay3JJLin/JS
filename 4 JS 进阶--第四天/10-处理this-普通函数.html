@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>处理this</title>
+</head>
+
+<body>
+    <button>点只因</button>
+    <script>
+        // 普通函数： 谁调用我，this就指向谁
+        console.log(this);//window
+        function fn() {
+            console.log(this);//window
+        }
+        window.fn();
+        window.setTimeout(fn, 1000);
+
+        document.querySelector('button').addEventListener('click', function () {
+            console.log(this);//button,指向调用者
+        })
+
+        const obj = {
+            sayHi: function () {
+                console.log(this);//指向obj
+            }
+        }
+        obj.sayHi();
+    </script>
+</body>
+
+</html>
+
+<!-- 
+普通函数的调用方式决定了 this 的值，即【谁调用 this 的值指向谁】
+普通函数没有明确调用者时 this 值为 window，严格模式下没有调用者时 this 的值为 undefined
+
+1. 普通函数this指向我们怎么记忆？
+ 【谁调用 this 的值指向谁】
+2. 普通函数严格模式下指向谁？
+ 严格模式下指向 undefined
+ -->

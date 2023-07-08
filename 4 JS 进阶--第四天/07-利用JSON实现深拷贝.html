@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用JSON实现深拷贝</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            uname: 'pink',
+            age: 18,
+            hobby: ['乒乓球', '足球'],
+            family: {
+                baby: '小pink'
+            }
+        }
+        // JSON.stringify() 把对象转换为JSON字符串
+        // JSON.parse() 把JSON字符串转换为对象
+        // 字符串 没有 引用,属性值 之类的说法 是简单数据类型
+        // 字符串在栈里，转换为 新对象后，和原来的对象(地址)没有关系，是个新空间
+
+        const o = JSON.parse(JSON.stringify(obj));
+        console.log(o);
+        o.family.baby = '呱';
+        console.log(obj);//没有修改
+    </script>
+</body>
+
+</html>
+
+<!-- 
+3. 通过JSON.stringify()  JSON.parse()实现
+const o = JSON.parse(JSON.stringify(obj));
+
+1. 实现深拷贝三种方式？
+ 自己利用递归函数书写深拷贝
+ 利用js库 lodash里面的 _.cloneDeep() 
+ 利用JSON字符串转换
+ -->
